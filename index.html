@@ -167,7 +167,7 @@ footer{max-width:1080px;margin:auto;padding:28px 20px 44px;color:var(--muted);fo
   function setLang(l){root.setAttribute('data-lang',l);root.lang=l;lb.textContent=l==='fr'?'EN':'FR';
     document.title=l==='fr'?'Antonin Pouly – E-portfolio':'Antonin Pouly – Portfolio';
     try{localStorage.setItem('lang',l)}catch(e){}}
-  setLang(saved||((navigator.language||'en').slice(0,2)==='fr'?'fr':'en'));
+  setLang(saved||'en');
   lb.addEventListener('click',function(){setLang(root.getAttribute('data-lang')==='fr'?'en':'fr')});
   var links=[].slice.call(document.querySelectorAll('.links a')),map={};
   links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
