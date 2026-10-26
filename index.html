@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Antonin Pouly – Portfolio</title>
+<meta name="description" content="E-portfolio d’Antonin Pouly, élève ingénieur à l’ENSEEIHT (électronique, électricité, énergie).">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#faf8f5;--band:#f2eee8;--surface:#ffffff;--text:#2a2622;--muted:#6d655d;--line:#e6e0d8;--accent:#b4532a;--accent-soft:#f6e6dc;--on-accent:#ffffff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15120f;--band:#1c1814;--surface:#221d18;--text:#f1ebe4;--muted:#a79d92;--line:#3a332b;--accent:#e58a5f;--accent-soft:#33241b;--on-accent:#15120f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15120f;--band:#1c1814;--surface:#221d18;--text:#f1ebe4;--muted:#a79d92;--line:#3a332b;--accent:#e58a5f;--accent-soft:#33241b;--on-accent:#15120f;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+html[data-lang="en"] [data-l="fr"],html[data-lang="fr"] [data-l="en"]{display:none}
+a{color:var(--accent)}
+h1,h2,h3,h4{line-height:1.2;margin:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:31;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:1080px;margin:auto;display:flex;align-items:center;gap:14px;padding:10px 20px}
+.brand{font-weight:700;color:var(--text);text-decoration:none;white-space:nowrap}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.links::-webkit-scrollbar{display:none}
+.links a{color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px;font-size:14px;white-space:nowrap}
+.links a:hover{color:var(--text)}
+.links a.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
+#lang{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:5px 12px;font:600 13px system-ui;cursor:pointer}
+.wrap{max-width:1080px;margin:auto;padding:84px 20px}
+.band{background:var(--band)}
+h2{font-size:clamp(28px,4vw,38px);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 36px}
+h3.k{font-size:20px;margin:40px 0 16px}
+#welcome .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center;min-height:82vh;padding-top:56px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 12px}
+h1{font-size:clamp(40px,7vw,68px);letter-spacing:-.025em;margin-bottom:16px}
+.lead{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:34em;margin:0 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0 0 28px;list-style:none}
+.chips li{background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 22px;border-radius:10px;text-decoration:none;font:600 16px system-ui;border:1px solid var(--accent);cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.photo{width:100%;max-width:360px;aspect-ratio:1;justify-self:center;border-radius:32px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(0,0,0,.35);border:6px solid var(--surface)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.drive{margin-top:44px;padding:20px 24px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 14px 14px 0;color:var(--muted);max-width:44em}
+.drive strong{color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h4{font-size:18px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted)}
+.meta{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.03em;margin:0 0 6px!important}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skills h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.skills li{display:flex;align-items:center;gap:10px}
+.skills li i{font-style:normal;width:34px;height:34px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;font-size:17px;flex:none}
+.proj{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:22px;align-items:center}
+.thumb{aspect-ratio:4/3;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent);overflow:hidden}
+.thumb svg{width:100%;height:100%}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:3px 12px;border-radius:999px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
+.proj h4{font-size:22px;margin-bottom:8px}
+.proj p{color:var(--muted);margin:0 0 8px}
+.proj p b{color:var(--text)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tags span{font-size:13px;padding:3px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.xp{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.xp:last-child{border:0}
+.logo{width:56px;height:56px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;font-size:26px}
+.xp h4{font-size:18px}.xp .org{color:var(--muted);margin:2px 0}
+.xp p{margin:6px 0 0;color:var(--muted)}
+.lang{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.lang:last-child{border:0}.lang span:last-child{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact a.card{display:block;text-decoration:none;color:var(--text)}
+.contact a.card:hover{border-color:var(--accent)}
+.contact small{display:block;color:var(--muted);font-size:13px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em}
+.contact strong{word-break:break-word}
+footer{max-width:1080px;margin:auto;padding:28px 20px 44px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:780px){
+#welcome .wrap{grid-template-columns:1fr;min-height:0;gap:32px}
+.photo{max-width:220px;order:-1;justify-self:start;border-radius:24px}
+.proj{grid-template-columns:1fr}.two{grid-template-columns:1fr}.brand{display:none}.links{margin-left:0}.wrap{padding:64px 20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header><nav class="nav" aria-label="Navigation"><a class="brand" href="#welcome">Antonin Pouly</a>
+<div class="links">
+<a href="#welcome"><span data-l="en">Welcome</span><span data-l="fr">Accueil</span></a><a href="#engineering"><span data-l="en">Engineering</span><span data-l="fr">Ingénierie</span></a><a href="#career"><span data-l="en">Career</span><span data-l="fr">Parcours</span></a><a href="#mobility"><span data-l="en">Mobility</span><span data-l="fr">Mobilité</span></a><a href="#engagement"><span data-l="en">Engagement</span><span data-l="fr">Engagement</span></a><a href="#activities"><span data-l="en">Activities</span><span data-l="fr">Activités</span></a><a href="#contact">Contact</a>
+</div><button id="lang" type="button" aria-label="Language">FR</button></nav></header><main><section id="welcome"><div class="wrap"><div>
+<p class="eyebrow"><span data-l="en">Electronics, Electrical Engineering &amp; Energy</span><span data-l="fr">Électronique, électricité &amp; énergie</span></p>
+<h1>Antonin Pouly</h1>
+<p class="lead"><span data-l="en">Engineering student at ENSEEIHT, combining electronics and electrical engineering to design more efficient and intelligent systems.</span><span data-l="fr">Élève ingénieur à l’ENSEEIHT, j’allie électronique et génie électrique pour concevoir des systèmes plus efficaces et plus intelligents.</span></p>
+<ul class="chips"><li>ENSEEIHT, Toulouse</li><li><span data-l="en">Electrical, Electronical, Energy and Automation department</span><span data-l="fr">Département Électronique, Électrique, Énergie et Automatique</span></li></ul>
+<div class="btns"><a class="btn primary" href="#contact"><span data-l="en">Get in touch</span><span data-l="fr">Me contacter</span></a><a class="btn ghost" href="#engineering"><span data-l="en">See my work</span><span data-l="fr">Voir mes projets</span></a></div>
+</div><div class="photo"><img src="assets/photo.jpg" alt="Portrait d’Antonin Pouly" width="322" height="322"></div></div>
+<div class="wrap" style="padding-top:0;min-height:0;display:block"><div class="drive"><strong><span data-l="en">What drives me.</span><span data-l="fr">Ce qui m’anime.</span></strong> <span data-l="en">Understanding how to combine these technologies to design smarter, higher-performing systems that meet national needs. Thanks to my years of preparatory classes and my involvement in scouting, I enjoy it when technology answers real collective challenges.</span><span data-l="fr">Comprendre comment allier ces technologies pour concevoir des systèmes plus intelligents et performants, qui répondent aux besoins nationaux. Grâce à mes années de prépa et à mon engagement dans le scoutisme, j’aime quand la technique répond à de vrais enjeux collectifs.</span></div></div></section><section id="engineering" class="band"><div class="wrap">
+<h2><span data-l="en">Engineering</span><span data-l="fr">Ingénierie</span></h2><p class="sub"><span data-l="en">Skills and projects from my engineering curriculum.</span><span data-l="fr">Compétences et projets de mon cursus d’ingénieur.</span></p>
+<h3 class="k" style="margin-top:0"><span data-l="en">Skills</span><span data-l="fr">Compétences</span></h3>
+<div class="skills">
+<div class="card"><h4><span data-l="en">Fields</span><span data-l="fr">Domaines</span></h4><ul><li><i aria-hidden="true">⚡</i><span><span data-l="en">Electronics</span><span data-l="fr">Électronique</span></span></li><li><i aria-hidden="true">🔌</i><span><span data-l="en">Electrical engineering</span><span data-l="fr">Génie électrique</span></span></li><li><i aria-hidden="true">🔋</i><span><span data-l="en">Energy</span><span data-l="fr">Énergie</span></span></li><li><i aria-hidden="true">🎛️</i><span><span data-l="en">Automation</span><span data-l="fr">Automatique</span></span></li><li><i aria-hidden="true">🧲</i><span><span data-l="en">Electromagnetism</span><span data-l="fr">Électromagnétisme</span></span></li><li><i aria-hidden="true">📡</i><span><span data-l="en">Transmission</span><span data-l="fr">Transmission</span></span></li></ul></div>
+<div class="card"><h4><span data-l="en">Certifications</span><span data-l="fr">Certifications</span></h4><ul><li><i aria-hidden="true">🚗</i><span><span data-l="en">Driving licence (B)</span><span data-l="fr">Permis B</span></span></li><li><i aria-hidden="true">🩺</i><span><span data-l="en">PSC1 (first aid)</span><span data-l="fr">PSC1 (premiers secours)</span></span></li><li><i aria-hidden="true">🏕️</i><span><span data-l="en">CEP 1 (youth supervision)</span><span data-l="fr">CEP 1 (encadrement de jeunes)</span></span></li><li><i aria-hidden="true">🇩🇪</i><span><span data-l="en">German A2 (DSD)</span><span data-l="fr">Allemand A2 (DSD)</span></span></li></ul></div>
+<div class="card"><h4>Soft skills</h4><ul><li><i aria-hidden="true">🧭</i><span><span data-l="en">Leadership</span><span data-l="fr">Leadership</span></span></li><li><i aria-hidden="true">📦</i><span><span data-l="en">Logistics</span><span data-l="fr">Logistique</span></span></li><li><i aria-hidden="true">🗓️</i><span><span data-l="en">Organization</span><span data-l="fr">Organisation</span></span></li><li><i aria-hidden="true">🤝</i><span><span data-l="en">Team management</span><span data-l="fr">Gestion d’équipe</span></span></li></ul></div>
+</div>
+<h3 class="k"><span data-l="en">Projects</span><span data-l="fr">Projets</span></h3>
+<article class="proj"><div class="thumb"><svg viewBox="0 0 320 240" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+<path d="M40 120h120" opacity=".5"/><path d="M40 108h120" opacity=".5"/><path d="M40 132h120" opacity=".5"/>
+<rect x="160" y="70" width="54" height="100" rx="10" fill="currentColor" fill-opacity=".12"/>
+<g fill="currentColor"><circle cx="187" cy="88" r="4"/><circle cx="187" cy="104" r="4"/><circle cx="187" cy="120" r="4"/><circle cx="187" cy="136" r="4"/><circle cx="187" cy="152" r="4"/></g>
+<path d="M230 120c20-50 40-50 60 0s-20 100-40 0" opacity=".6"/><path d="M230 120c14-30 28-30 42 0" opacity=".35"/>
+<path d="M40 150h120" opacity=".5"/></svg></div><div>
+<span class="badge"><span data-l="en">Completed</span><span data-l="fr">Terminé</span></span><h4><span data-l="en">Building of a model guitar</span><span data-l="fr">Construction d’une maquette de guitare</span></h4>
+<p><span data-l="en">Studies project, 25 June – 1 July 2026. The goal was to create a model of a real guitar to test how a micro pickup works.</span><span data-l="fr">Projet d’études, du 25 juin au 1er juillet 2026. L’objectif était de créer une maquette de guitare pour tester le fonctionnement d’un micro.</span></p>
+<div class="tags"><span><span data-l="en">Electromagnetism</span><span data-l="fr">Électromagnétisme</span></span><span><span data-l="en">Studies</span><span data-l="fr">Études</span></span><span><span data-l="en">Prototype</span><span data-l="fr">Prototype</span></span></div></div></article>
+<article class="proj"><div class="thumb"><svg viewBox="0 0 320 240" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+<rect x="110" y="120" width="100" height="84" rx="12" fill="currentColor" fill-opacity=".12"/>
+<circle cx="140" cy="162" r="14"/><circle cx="182" cy="162" r="9"/><path d="M122 138h76" opacity=".5"/>
+<path d="M160 120V36"/><circle cx="160" cy="32" r="5" fill="currentColor"/>
+<path d="M118 62c-14 14-14 38 0 52M202 62c14 14 14 38 0 52" opacity=".6"/><path d="M96 48c-26 26-26 70 0 96M224 48c26 26 26 70 0 96" opacity=".35"/></svg></div><div>
+<span class="badge"><span data-l="en">Completed</span><span data-l="fr">Terminé</span></span><h4><span data-l="en">CB radio</span><span data-l="fr">Radio CB</span></h4>
+<p><span data-l="en"><b>Goal:</b> carry a CB radio in a rucksack to communicate while walking, without interfering with transmission or reception.</span><span data-l="fr"><b>Objectif :</b> transporter une radio CB dans un sac à dos pour communiquer en marchant, sans perturber l’émission ni la réception.</span></p>
+<p><span data-l="en"><b>Result:</b> mixed. Communication worked, but we couldn’t transmit beyond 2 km.</span><span data-l="fr"><b>Résultat :</b> mitigé. La communication fonctionnait, mais sans dépasser 2 km.</span></p>
+<div class="tags"><span>Scouts</span><span><span data-l="en">Transmission</span><span data-l="fr">Transmission</span></span><span>CB</span><span><span data-l="en">Morse code</span><span data-l="fr">Code Morse</span></span></div>
+<p style="margin-top:12px"><a href="https://www.youtube.com/shorts/pBHpVcatoZ4" target="_blank" rel="noopener"><span data-l="en">Watch the video →</span><span data-l="fr">Voir la vidéo →</span></a></p></div></article>
+</div></section><section id="career"><div class="wrap">
+<h2><span data-l="en">Career</span><span data-l="fr">Parcours</span></h2><p class="sub"><span data-l="en">Professional documents, goals, and inspirations.</span><span data-l="fr">Documents professionnels, objectifs et inspirations.</span></p>
+<div class="btns"><a class="btn primary" href="assets/CV_Antonin_Pouly.pdf" download><span data-l="en">Download CV</span><span data-l="fr">Télécharger mon CV</span></a><a class="btn ghost" href="https://www.linkedin.com/in/antonin-pouly-bb6a1a437" target="_blank" rel="noopener"><span data-l="en">LinkedIn profile</span><span data-l="fr">Profil LinkedIn</span></a></div>
+<div class="card" style="margin-top:28px"><p class="meta"><span data-l="en">CURRENT GOAL</span><span data-l="fr">OBJECTIF ACTUEL</span></p><h4><span data-l="en">End-of-first-year internship</span><span data-l="fr">Stage de fin de 1re année</span></h4><p><span data-l="en">I am looking for an internship in the energy and electronics industry, to discover these sectors and understand how to put my skills at the service of a company.</span><span data-l="fr">Je cherche un stage dans l’industrie de l’énergie et de l’électronique, pour découvrir ces secteurs et comprendre comment mettre mes compétences au service d’une entreprise.</span></p></div>
+<h3 class="k"><span data-l="en">Past Experience</span><span data-l="fr">Expériences</span></h3>
+<div><div class="xp"><div class="logo" aria-hidden="true">🎻</div><div><h4><span data-l="en">Ticketing officer</span><span data-l="fr">Chargé de billetterie</span></h4><div class="org">Musique &amp; Vin au Clos Vougeot, Meursault</div><div class="meta"><span data-l="en">JUN 2025</span><span data-l="fr">JUIN 2025</span></div><p><span data-l="en">Ticketing for a classical music festival.</span><span data-l="fr">Billetterie d’un festival de musique classique.</span></p></div></div>
+<div class="xp"><div class="logo" aria-hidden="true">🌿</div><div><h4><span data-l="en">Landscaping internship</span><span data-l="fr">Stage en paysagisme</span></h4><div class="org">JM Jardins</div><div class="meta"><span data-l="en">JAN 2025</span><span data-l="fr">JANV. 2025</span></div></div></div>
+<div class="xp"><div class="logo" aria-hidden="true">🪵</div><div><h4><span data-l="en">Cabinet-making internship</span><span data-l="fr">Stage en ébénisterie</span></h4><div class="org">Annecy</div><div class="meta"><span data-l="en">JUN 2020</span><span data-l="fr">JUIN 2020</span></div></div></div></div>
+<h3 class="k"><span data-l="en">Education</span><span data-l="fr">Formation</span></h3>
+<div><div class="xp"><div class="logo" aria-hidden="true">🎓</div><div><h4><span data-l="en">Engineering degree, 1st year</span><span data-l="fr">Cycle ingénieur, 1re année</span></h4><div class="org">ENSEEIHT, Toulouse</div><div class="meta"><span data-l="en">IN PROGRESS</span><span data-l="fr">EN COURS</span></div><p><span data-l="en">Electrical, Electronical, Energy and Automation department.</span><span data-l="fr">Filière Électronique, électrique, énergie et automatique.</span></p></div></div>
+<div class="xp"><div class="logo" aria-hidden="true">📐</div><div><h4><span data-l="en">Preparatory classes</span><span data-l="fr">Classes préparatoires</span></h4><div class="org">Lycée La Martinière Monplaisir</div><div class="meta">2024 – 2026</div></div></div>
+<div class="xp"><div class="logo" aria-hidden="true">📘</div><div><h4><span data-l="en">Baccalauréat</span><span data-l="fr">Baccalauréat général</span></h4><div class="org">Lycée Saint-Thomas d’Aquin</div><div class="meta"><span data-l="en">JUN 2024</span><span data-l="fr">JUIN 2024</span></div><p><span data-l="en">Highest honours (très bien).</span><span data-l="fr">Mention très bien.</span></p></div></div></div>
+</div></section><section id="mobility" class="band"><div class="wrap">
+<h2><span data-l="en">Mobility</span><span data-l="fr">Mobilité</span></h2><p class="sub"><span data-l="en">Language skills and international aspirations.</span><span data-l="fr">Langues et projets à l’international.</span></p>
+<div class="two"><div class="card"><h4><span data-l="en">Languages</span><span data-l="fr">Langues</span></h4>
+<div class="lang"><span><span data-l="en">French</span><span data-l="fr">Français</span></span><span><span data-l="en">Native</span><span data-l="fr">Langue maternelle</span></span></div>
+<div class="lang"><span><span data-l="en">English</span><span data-l="fr">Anglais</span></span><span>B2</span></div>
+<div class="lang"><span><span data-l="en">German</span><span data-l="fr">Allemand</span></span><span>A2–B1</span></div>
+<div class="lang"><span><span data-l="en">Italian</span><span data-l="fr">Italien</span></span><span><span data-l="en">Started at school</span><span data-l="fr">Débuté au collège/lycée</span></span></div></div>
+<div class="card"><h4><span data-l="en">Mobility plans</span><span data-l="fr">Projet de mobilité</span></h4>
+<p><span data-l="en">My main goal is to discover another culture and see how other countries organize their economy. As I want to become a versatile engineer, I would like to improve my skills abroad and my English fluency.</span><span data-l="fr">Mon objectif principal est de découvrir une autre culture et de voir comment d’autres pays organisent leur économie. Pour devenir un ingénieur polyvalent, je souhaite progresser à l’étranger et améliorer mon anglais.</span></p>
+<p style="margin-top:12px"><b style="color:var(--text)"><span data-l="en">Target destination:</span><span data-l="fr">Destination visée :</span></b> <span data-l="en">New Zealand, recognized for its hydroelectric, geothermal and wind power producers.</span><span data-l="fr">la Nouvelle-Zélande, reconnue pour ses producteurs d’énergie hydroélectrique, géothermique et éolienne.</span></p></div></div>
+</div></section><section id="engagement"><div class="wrap">
+<h2><span data-l="en">Engagement</span><span data-l="fr">Engagement</span></h2><p class="sub"><span data-l="en">Community and civic involvement.</span><span data-l="fr">Engagement associatif et citoyen.</span></p>
+<div class="grid">
+<article class="card"><p class="meta"><span data-l="en">10 YEARS · LYON</span><span data-l="fr">10 ANS · LYON</span></p><h4><span data-l="en">Scouting</span><span data-l="fr">Scoutisme</span></h4><p><span data-l="en">Ten years of commitment in scouting. For 2 years, I led a team of 7 young people aged 12 to 17, my first experience of real responsibility. I hold the CEP 1 certification in youth supervision.</span><span data-l="fr">Dix ans d’engagement dans le scoutisme. Pendant 2 ans, j’ai dirigé une équipe de 7 jeunes de 12 à 17 ans, ma première expérience de forte responsabilité. Je suis titulaire du CEP 1 (encadrement de jeunes).</span></p></article>
+<article class="card"><p class="meta"><span data-l="en">SEP 2025 – SEP 2027 · VOLUNTEER</span><span data-l="fr">SEPT. 2025 – SEPT. 2027 · BÉNÉVOLAT</span></p><h4><span data-l="en">Student Parish of Toulouse</span><span data-l="fr">Paroisse étudiante de Toulouse</span></h4><p><span data-l="en">Logistics and community life lead: technical management (sound, equipment), logistics of shared meals and animation of community life in the student home.</span><span data-l="fr">Responsable logistique et vie communautaire : gestion technique (sonorisation, matériel), logistique des repas collectifs et animation de la vie communautaire du foyer étudiant.</span></p></article>
+</div></div></section><section id="activities" class="band"><div class="wrap">
+<h2><span data-l="en">Activities</span><span data-l="fr">Activités</span></h2><p class="sub"><span data-l="en">Passions outside of engineering.</span><span data-l="fr">Passions en dehors de l’ingénierie.</span></p>
+<div class="two">
+<article class="card"><p class="meta"><span data-l="en">SPORT</span><span data-l="fr">SPORT</span></p><h4>Triathlon</h4><p><span data-l="en">I’m involved in the Ride Club of my school, and I swim and run every week. As soon as I have time, I would like to ride races, in particular <b style='color:var(--text)'>L’Ardéchoise</b>, a 176 km race in the Ardèche region with more than 2,500 m of elevation gain. I also play football and tennis.</span><span data-l="fr">Je fais partie du Ride Club de mon école, et je nage et cours chaque semaine. Dès que j’en aurai le temps, j’aimerais participer à des courses cyclistes, notamment <b style='color:var(--text)'>L’Ardéchoise</b>, 176 km en Ardèche avec plus de 2 500 m de dénivelé. Je joue aussi au football et au tennis.</span></p></article>
+<article class="card"><p class="meta"><span data-l="en">MUSIC</span><span data-l="fr">MUSIQUE</span></p><h4><span data-l="en">Guitar, piano &amp; organ</span><span data-l="fr">Guitare, piano &amp; orgue</span></h4><p><span data-l="en">I love listening to music and creating my own, using various software on my computer. I have played guitar and piano for a long time, and I started learning the organ this year.</span><span data-l="fr">J’adore écouter de la musique et en créer, avec différents logiciels sur mon ordinateur. Je joue de la guitare et du piano depuis longtemps, et j’ai commencé l’orgue cette année.</span></p></article>
+</div></div></section><section id="contact" class="contact"><div class="wrap">
+<h2>Contact</h2><p class="sub"><span data-l="en">Feel free to reach out for an internship, a project, or just a chat.</span><span data-l="fr">N’hésitez pas à me contacter pour un stage, un projet ou simplement pour échanger.</span></p>
+<div class="grid">
+<a class="card" href="mailto:antonin.pouly@gmail.com"><small>Email</small><strong>antonin.pouly@gmail.com</strong></a>
+<a class="card" href="tel:+33646848689"><small><span data-l="en">Phone</span><span data-l="fr">Téléphone</span></small><strong>06 46 84 86 89</strong></a>
+<a class="card" href="https://www.linkedin.com/in/antonin-pouly-bb6a1a437" target="_blank" rel="noopener"><small>LinkedIn</small><strong><span data-l="en">My LinkedIn profile</span><span data-l="fr">Mon profil LinkedIn</span></strong></a>
+</div></div></section></main>
+<footer>© 2026 Antonin Pouly.</footer>
+<script>
+(function(){
+  var root=document.documentElement,lb=document.getElementById('lang'),saved=null;
+  try{saved=localStorage.getItem('lang')}catch(e){}
+  function setLang(l){root.setAttribute('data-lang',l);root.lang=l;lb.textContent=l==='fr'?'EN':'FR';
+    document.title=l==='fr'?'Antonin Pouly – E-portfolio':'Antonin Pouly – Portfolio';
+    try{localStorage.setItem('lang',l)}catch(e){}}
+  setLang(saved||((navigator.language||'en').slice(0,2)==='fr'?'fr':'en'));
+  lb.addEventListener('click',function(){setLang(root.getAttribute('data-lang')==='fr'?'en':'fr')});
+  var links=[].slice.call(document.querySelectorAll('.links a')),map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+    links.forEach(function(a){a.classList.remove('active')});var a=map[e.target.id];
+    if(a){a.classList.add('active');try{a.scrollIntoView({inline:'center',block:'nearest'})}catch(_){}}}})},{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+  })();
+</script></body></html>
